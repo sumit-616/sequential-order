@@ -1,33 +1,49 @@
 # General Code Order
 
-✅ **1. Imports** — Always import in this order for clarity:
+✅ **1. Imports**  
+   Always import in this clear order:  
+   - **Libraries:** React, Next.js, built-in hooks  
+     _(e.g., `import React, { useState } from "react";` · `import Link from "next/link";`)_
+   - **Custom Hooks:** project-specific hooks  
+     _(e.g., `import { useGetProfile } from "@/lib/hooks";`)_
+   - **Types:** TypeScript types  
+     _(e.g., `import type { User } from "@/types/user";`)_
+   - **Components & Utilities:** local UI, helpers, utilities  
+     _(e.g., `import Navbar from "@/components/Navbar";` · `import { toast } from "@/components/ui/use-toast";`)_
 
-   1️⃣ **Libraries** — React, Next.js, built-in hooks  
-   _(e.g., `import React, { useState } from "react";` → `import Link from "next/link";`)_
+---
 
-   2️⃣ **Custom Hooks** — your project’s custom hooks  
-   _(e.g., `import { useGetProfile } from "@/lib/hooks";`)_
+✅ **2. Setup**  
+   - Router, translations, queries, mutations  
+     _(e.g., `const router = useRouter();`)_
 
-   3️⃣ **Types** — TypeScript types  
-   _(e.g., `import type { User } from "@/types/user";`)_
+✅ **3. State**  
+   - `useState` declarations  
+     _(e.g., `const [data, setData] = useState();`)_
 
-   4️⃣ **Components & Utilities** — local UI components, helper modules, utilities  
-   _(e.g., `import Navbar from "@/components/Navbar";` → `import { toast } from "@/components/ui/use-toast";`)_
+✅ **4. Effects**  
+   - `useEffect` for side effects
 
-✅ **2. Setup** — router, translations, queries, mutations
+✅ **5. Action Functions**  
+   - Pure helpers/utilities  
+     _(e.g., `getName()`)_
 
-✅ **3. State** — `useState`
+✅ **6. Handler Functions**  
+   - For actions, API calls, mutations  
+     _(e.g., `handleClick()`, `handleSubmit()`)_
 
-✅ **4. Effects** — `useEffect`
+✅ **7. Loading**  
+   - Show loader if needed  
+     _(e.g., `if (isLoading) return <Loading />;`)_
 
-✅ **5. Action Functions** — pure helper or utility functions _(e.g., `getName`)_
+✅ **8. Return JSX**  
+   - Render the UI  
+     _(inside `return (...)`)_
 
-✅ **6. Handler Functions** — trigger actions or API calls _(e.g., `handleClick`, `handleSubmit`)_
+✅ **9. Export**  
+   - Export the component  
+     _(e.g., `export default MyComponent;`)_
 
-✅ **7. Loading** — show loader if needed
+---
 
-✅ **8. Return JSX** — render UI
-
-✅ **9. Export** — export the component
-
-Keep every file clear and consistent.
+✅ **Tip:** Keep this order consistent in every file for clear, maintainable code!
