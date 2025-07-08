@@ -4,20 +4,29 @@
    Always import in this clear order:  
    - **Libraries:** React, Next.js, built-in hooks  
      _(e.g., `import React, { useState } from "react";` · `import Link from "next/link";`)_
-   - **Custom Hooks & Lib:** project logic, hooks, API calls  
+   - **Custom Hooks:** project-specific hooks  
      _(e.g., `import { useGetProfile } from "@/lib/hooks";`)_
    - **Types:** TypeScript types  
      _(e.g., `import type { User } from "@/types/user";`)_
    - **Components:** local UI components  
      _(e.g., `import Navbar from "@/components/Navbar";`)_
-   - **Utilities:** generic helpers  
+   - **Utils:** generic helpers  
      _(e.g., `import { formatDate } from "@/utils/formatDate";`)_
 
 ---
 
 ✅ **2. Setup**  
-   - Router, translations, queries, mutations  
+   Always declare in this clear order:  
+   - **Router:** Next router  
      _(e.g., `const router = useRouter();`)_
+   - **Translations:** i18n translations  
+     _(e.g., `const t = useTranslations("Dashboard");`)_
+   - **Queries:** data fetching hooks  
+     _(e.g., `const { data } = useGetProfile();`)_
+   - **Mutations:** actions for POST, PUT, DELETE  
+     _(e.g., `const { mutate } = useSendConnectionRequest();`)_
+
+---
 
 ✅ **3. State**  
    - `useState` declarations  
@@ -27,7 +36,7 @@
    - `useEffect` for side effects
 
 ✅ **5. Action Functions**  
-   - Pure helpers/utilities inside the component  
+   - Pure helper logic inside the component  
      _(e.g., `getName()`)_
 
 ✅ **6. Handler Functions**  
@@ -48,4 +57,4 @@
 
 ---
 
-✅ **Tip:** Use this order in every file for clear, maintainable code!
+✅ **Tip:** Use this order exactly for clear, maintainable code!
